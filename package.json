@@ -6,15 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.5",
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.4.2",
     "@chakra-ui/theme-tools": "1.1.2",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
+    "@fontsource/space-grotesk": "^4.5.5",
     "framer-motion": "^4.0.3",
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",

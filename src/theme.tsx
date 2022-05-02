@@ -1,21 +1,27 @@
-import { extendTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const fonts = { mono: `'Menlo', monospace` }
+import { extendTheme } from "@chakra-ui/react";
+import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const breakpoints = createBreakpoints({
-  sm: '40em',
-  md: '52em',
-  lg: '64em',
-  xl: '80em',
-})
+  sm: "40em",
+  md: "52em",
+  lg: "64em",
+  xl: "80em",
+});
 
 const theme = extendTheme({
-  colors: {
-    black: '#16161D',
+  fonts: {
+    heading: "Space Grotesk, sans-serif",
+    body: "Space Grotesk, sans-serif",
   },
-  fonts,
+  colors: {
+    black: "#16161D",
+    darkGray: "#1A202C",
+    lightGray: "#303641",
+    highlight: "#1F293C",
+    accent: "#00FFE0",
+    red: "#DE0000",
+  },
   breakpoints,
-})
+});
 
-export default theme
+export default theme;

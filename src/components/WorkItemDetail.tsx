@@ -12,21 +12,24 @@ import { MdThumbUpAlt, MdThumbUpOffAlt, MdThumbUp } from "react-icons/md";
 const WorkItemDetail = (props) => {
   const { title, description, date, progress } = props.workItem;
   return (
-    <Flex mt={32} gap={8} direction={{ base: "column", md: "row", lg: "row" }}>
+    <Flex
+      mt={[16, 32]}
+      gap={8}
+      direction={{ base: "column", md: "row", lg: "row" }}
+    >
       <Box
         className="work-progress"
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
       >
-        {/* <CircularProgress
+        <CircularProgress
           value={progress}
           color={progress === 100 ? "accent" : "red"}
-          size={"72px"}
+          size={"96px"}
         >
           <CircularProgressLabel>{progress}%</CircularProgressLabel>
-        </CircularProgress> */}
-        <MdThumbUpAlt size={"8rem"} />
+        </CircularProgress>
       </Box>
       <Box className="work-description">
         <HStack
@@ -34,7 +37,7 @@ const WorkItemDetail = (props) => {
           justifyContent={"space-between"}
           alignItems={"flex-start"}
         >
-          <Heading size={"md"}>{title}</Heading>
+          <Heading size={"lg"}>{title}</Heading>
           {/* <Link href={"/hello"}>
           <LinkBox>
             <LinkIcon color={"accent"}></LinkIcon>
@@ -42,8 +45,7 @@ const WorkItemDetail = (props) => {
         </Link> */}
         </HStack>
         <Text mb={4} color={"gray"}>
-          {progress < 100 && "Expected Deploy: "}
-          {"Deployed: " + date}
+          {progress < 100 ? `Expected Deploy: ${date}` : `Deployed: ${date}`}
         </Text>
         <Text size="xl">{description}</Text>
       </Box>

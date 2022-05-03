@@ -1,3 +1,4 @@
+import { ExternalLinkIcon, LinkIcon } from "@chakra-ui/icons";
 import {
   VStack,
   HStack,
@@ -5,6 +6,7 @@ import {
   Text,
   Box,
   Img as ChakraImage,
+  Link,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -45,8 +47,16 @@ const Hero = () => {
         color={"white"}
       >
         I’m a full-stack engineer, a designer, and a content creator. I work at
-        QSS Inc. as a Senior Software Engineer, and I’m a core member at IMD
-        Core, contributing as a Developer Advocate.
+        QSS Inc. as a Senior Software Engineer, and I’m a core member at{" "}
+        <Link
+          color={"accent"}
+          href={"http://github.com/mohsinyaqoob"}
+          target={"_blank"}
+        >
+          IMD Core
+          <ExternalLinkIcon mx={2} />
+        </Link>
+        , contributing as a Developer Advocate.
       </Text>
     </VStack>
   );

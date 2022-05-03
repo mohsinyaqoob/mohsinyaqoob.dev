@@ -9,6 +9,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
+import slugify from "slugify";
 
 import { WorkItem } from "../types/work-item";
 
@@ -17,7 +18,11 @@ const WorkItem = (props: WorkItem) => {
     props;
 
   return (
-    <Link href={internalLink ? internalLink : externalLink}>
+    <Link
+      href={`/work/${slugify(title, {
+        lower: true,
+      })}`}
+    >
       <ListItem
         bg={"lightGray"}
         p={8}

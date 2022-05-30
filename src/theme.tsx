@@ -1,5 +1,11 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
+
+// 2. Add your color mode config
+const colorMode: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
 const breakpoints = createBreakpoints({
   sm: "40em",
@@ -9,6 +15,7 @@ const breakpoints = createBreakpoints({
 });
 
 const theme = extendTheme({
+  ...colorMode,
   fonts: {
     heading: "Space Grotesk, sans-serif",
     body: "Inter, sans-serif",

@@ -15,7 +15,7 @@ const breakpoints = createBreakpoints({
 });
 
 const theme = extendTheme({
-  ...colorMode,
+  colorMode,
   fonts: {
     heading: "Space Grotesk, sans-serif",
     body: "Inter, sans-serif",

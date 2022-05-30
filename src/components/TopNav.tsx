@@ -53,7 +53,7 @@ const TopNav = () => {
       </List>
 
       <Box display={["flex", "none", "none"]}>
-        <Menu>
+        <Menu colorScheme={"dark"}>
           <MenuButton
             as={IconButton}
             aria-label="Options"

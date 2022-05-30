@@ -1,19 +1,25 @@
-import Layout from "../layout";
+import Hero from "@/components/Hero";
+import WorkList from "@/components/work/WorkList";
+import BlogList from "@/components/blog/BlogList";
+import { getRecentWork } from "@/utils/work";
 
-import TopNav from "../components/TopNav";
-import Hero from "../components/Hero";
-import WorkList from "../components/WorkList";
-import Footer from "../components/Footer";
-
-const Index = () => {
+const Index = ({ workItems }) => {
   return (
-    <Layout>
-      {/* Hero */}
+    <>
       <Hero />
       {/* Projects */}
-      <WorkList showTotal={6} />
-    </Layout>
+      <WorkList workItems={workItems} />
+      {/* <BlogList showTotal={6} /> */}
+    </>
   );
+};
+
+export const getStaticProps = async () => {
+  const workItems = await getRecentWork(6);
+
+  return {
+    props: { workItems },
+  };
 };
 
 export default Index;

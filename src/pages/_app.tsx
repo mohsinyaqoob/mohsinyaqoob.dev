@@ -4,11 +4,14 @@ import theme from "../theme";
 import { AppProps } from "next/app";
 
 import "@fontsource/space-grotesk";
+import Layout from "../layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   );
 }

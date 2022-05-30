@@ -9,20 +9,18 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import slugify from "slugify";
 
-import { WorkItem } from "../types/work-item";
+import { CalendarIcon } from "@chakra-ui/icons";
+
+import { WorkItem } from "@/types/work-item";
+import { getMinimalString } from "@/utils/strings";
+import { formatDate } from "@/utils/dates";
 
 const WorkItem = (props: WorkItem) => {
-  const { progress, title, description, date, internalLink, externalLink } =
-    props;
+  const { progress, title, description, date, slug } = props;
 
   return (
-    <Link
-      href={`/work/${slugify(title, {
-        lower: true,
-      })}`}
-    >
+    <Link href={`/work/${slug}`}>
       <ListItem
         bg={"lightGray"}
         p={8}
@@ -47,24 +45,21 @@ const WorkItem = (props: WorkItem) => {
               <CircularProgressLabel>{progress}%</CircularProgressLabel>
             </CircularProgress>
           </Box>
-          <Box className="work-description">
+          <Box>
             <HStack
               mb={1}
               justifyContent={"space-between"}
               alignItems={"flex-start"}
             >
               <Heading size={"md"}>{title}</Heading>
-              {/* <Link href={"/hello"}>
-                <LinkBox>
-                  <LinkIcon color={"accent"}></LinkIcon>
-                </LinkBox>
-              </Link> */}
             </HStack>
-            <Text mb={4} color={"gray"}>
-              {progress < 100 && "Expected Deploy: "}
-              {date}
+            <Text mb={4} color={"gray"} display={"flex"} alignItems={"center"}>
+              <CalendarIcon mr={2} />
+              {progress < 100
+                ? `Expected: ${formatDate(date)}`
+                : `${formatDate(date)}`}
             </Text>
-            <Text size="xl">{description}</Text>
+            <Text size="xl">{getMinimalString(description, 40)}...</Text>
           </Box>
         </Flex>
       </ListItem>

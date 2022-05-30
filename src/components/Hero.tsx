@@ -32,7 +32,7 @@ const Hero = () => {
         <Heading size={"lg"} color={"white"}>
           Hello, I'm{" "}
           <Text as={"span"} color="cyan">
-            Mohsin
+            <Text as={"span"}>Mohsin</Text>
           </Text>
           .
         </Heading>

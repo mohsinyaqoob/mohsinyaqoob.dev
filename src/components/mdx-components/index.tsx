@@ -24,7 +24,7 @@ const Pre = (props) => (
   <chakra.div
     w={"full"}
     my="2em"
-    style={{ margin: "20px 0px" }}
+    style={{ marginBottom: "24px" }}
     borderRadius="sm"
     {...props}
   />
@@ -208,7 +208,11 @@ const MDXComponents = {
   td: TData,
   a: Anchor,
   p: (props) => (
-    <chakra.p style={{ lineHeight: 1.5, margin: "8px 0px" }} {...props} />
+    <chakra.p
+      w={"full"}
+      style={{ lineHeight: 1.5, margin: "8px 0px", width: "100%" }}
+      {...props}
+    />
   ),
   ul: (props) => (
     <chakra.ul px={{ base: 4, md: 0 }} apply="mdx.ul" {...props} />
@@ -216,7 +220,7 @@ const MDXComponents = {
   ol: (props) => <chakra.ol apply="mdx.ul" {...props} />,
   li: (props) => <chakra.li pb="4px" {...props} />,
   blockquote: (props) => (
-    <Box>
+    <Box w={"full"}>
       <Alert
         as="blockquote"
         role="none"
@@ -226,6 +230,9 @@ const MDXComponents = {
         {...props}
         w="unset"
         mx={-4}
+        p={0}
+        pl={2}
+        pr={2}
       />
     </Box>
   ),

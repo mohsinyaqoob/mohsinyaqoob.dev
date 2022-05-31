@@ -17,14 +17,15 @@ import {
   VStack,
   Heading,
   Text,
+  HStack,
+  Tag,
 } from "@chakra-ui/react";
 import { MDXRemote } from "next-mdx-remote";
-import { Head } from "next/document";
-import { BiBookContent } from "react-icons/bi";
 
 const WorkItemPage = ({
   progress,
   title,
+  tags,
   description,
   date,
   source,
@@ -68,21 +69,21 @@ const WorkItemPage = ({
             <CircularProgressLabel>{progress}%</CircularProgressLabel>
           </CircularProgress>
         </Box>
-        <Box className="work-description">
+        <Box className="work-content">
           <VStack justifyContent={"space-between"} alignItems={"flex-start"}>
             <VStack
               alignItems={"flex-start"}
               alignContent={"center"}
               justifyContent={"start"}
             >
-              <Heading size={"lg"} mb={2}>
+              <Heading size={"lg"} mb={0}>
                 {title}
               </Heading>
               <Flex
                 direction={{ base: "column", md: "row", lg: "row" }}
                 color={"gray"}
                 gap={2}
-                pb={4}
+                pb={2}
               >
                 <Text>
                   <CalendarIcon mr={2} />
@@ -94,6 +95,11 @@ const WorkItemPage = ({
                   <TimeIcon ml={[0, 0, 4]} /> {readingTime}
                 </Text>
               </Flex>
+              <HStack pb={4}>
+                {tags.map((tag, index) => (
+                  <Tag key={index}>{tag}</Tag>
+                ))}
+              </HStack>
             </VStack>
             <Text size="xl">{description}</Text>
             <MDXRemote {...source} components={MDXComponents} />
@@ -110,8 +116,10 @@ export const getStaticProps = async (ctx) => {
   const workItemContent = await readWorkItem(slug);
   const {
     content,
-    data: { title, description, date, progress },
+    data: { title, description, date, progress, tags },
   } = matter(workItemContent);
+
+  let tagsArray = tags ? tags.split(",") : [];
 
   return {
     props: {
@@ -120,6 +128,7 @@ export const getStaticProps = async (ctx) => {
       source: await serialize(content),
       readingTime: readingTime(content).text,
       title,
+      tags: tagsArray,
       description,
       date,
       slug,

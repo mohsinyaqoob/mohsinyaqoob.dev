@@ -4,5 +4,6 @@ export type WorkItem = {
   description: string;
   date: string;
   slug: string;
+  tags: [string];
   readingTime: string;
 };

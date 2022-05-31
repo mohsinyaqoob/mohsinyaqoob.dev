@@ -1,27 +1,40 @@
-import { Box, Button, Heading, List } from "@chakra-ui/react";
+import { Box, Text, Heading, List } from "@chakra-ui/react";
 
 import WorkItem from "./WorkItem";
 
-const WorkList = ({ workItems }) => {
+const WorkList = (props) => {
+  const { workItems, ...rest } = props;
   return (
-    <Box as="section" mt={32}>
+    <Box as="section" {...rest}>
       <Heading size={"md"}>Work Done.</Heading>
       <List mt={4} spacing={4}>
-        {workItems.map((item, index) => {
-          const { progress, title, description, date, slug, readingTime } =
-            item;
-          return (
-            <WorkItem
-              slug={slug}
-              key={index + 1}
-              progress={progress}
-              title={title}
-              description={description}
-              date={date}
-              readingTime={readingTime}
-            />
-          );
-        })}
+        {workItems.length == 0 ? (
+          <Text>No work found...</Text>
+        ) : (
+          workItems.map((item, index) => {
+            const {
+              progress,
+              title,
+              description,
+              date,
+              slug,
+              readingTime,
+              tags,
+            } = item;
+            return (
+              <WorkItem
+                slug={slug}
+                key={index + 1}
+                progress={progress}
+                title={title}
+                description={description}
+                date={date}
+                tags={tags}
+                readingTime={readingTime}
+              />
+            );
+          })
+        )}
       </List>
     </Box>
   );

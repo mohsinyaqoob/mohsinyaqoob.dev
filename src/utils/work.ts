@@ -7,6 +7,7 @@ import { WorkItem } from "@/types/work-item";
 
 export const getWorkItems = async (): Promise<WorkItem[]> => {
   const result: WorkItem[] = [];
+
   const dir = path.join(process.cwd(), "./src/content/work-items");
   const workItems = await fs.readdir(dir);
 
@@ -18,8 +19,10 @@ export const getWorkItems = async (): Promise<WorkItem[]> => {
 
       const {
         content,
-        data: { title, description, date, progress },
+        data: { title, description, date, progress, tags },
       } = matter(fileContent);
+
+      let tagsArray = tags ? tags.split(",") : [];
 
       result.push({
         progress,
@@ -27,6 +30,7 @@ export const getWorkItems = async (): Promise<WorkItem[]> => {
         description,
         date,
         slug,
+        tags: tagsArray,
         readingTime: readingTime(content).text,
       });
     })

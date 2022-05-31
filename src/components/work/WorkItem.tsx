@@ -8,6 +8,9 @@ import {
   HStack,
   Heading,
   Text,
+  VStack,
+  TagCloseButton,
+  Tag,
 } from "@chakra-ui/react";
 
 import { CalendarIcon } from "@chakra-ui/icons";
@@ -17,7 +20,7 @@ import { getMinimalString } from "@/utils/strings";
 import { formatDate } from "@/utils/dates";
 
 const WorkItem = (props: WorkItem) => {
-  const { progress, title, description, date, slug } = props;
+  const { progress, title, description, date, slug, tags } = props;
 
   return (
     <Link href={`/work/${slug}`}>
@@ -45,14 +48,8 @@ const WorkItem = (props: WorkItem) => {
               <CircularProgressLabel>{progress}%</CircularProgressLabel>
             </CircularProgress>
           </Box>
-          <Box>
-            <HStack
-              mb={1}
-              justifyContent={"space-between"}
-              alignItems={"flex-start"}
-            >
-              <Heading size={"md"}>{title}</Heading>
-            </HStack>
+          <VStack align={"start"}>
+            <Heading size={"md"}>{title}</Heading>
             <Text mb={4} color={"gray"} display={"flex"} alignItems={"center"}>
               <CalendarIcon mr={2} />
               {progress < 100
@@ -60,7 +57,12 @@ const WorkItem = (props: WorkItem) => {
                 : `${formatDate(date)}`}
             </Text>
             <Text size="xl">{getMinimalString(description, 40)}...</Text>
-          </Box>
+            <HStack pt={2}>
+              {tags.map((tag, index) => (
+                <Tag key={index}>{tag}</Tag>
+              ))}
+            </HStack>
+          </VStack>
         </Flex>
       </ListItem>
     </Link>

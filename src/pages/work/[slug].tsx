@@ -42,12 +42,8 @@ const WorkItemPage = ({
         openGraph={{
           description,
           title: `${title} - Mohsin Yaqoob`,
-          url: `https://mohsinyaqoob.com/blog/${slug}`,
-          images: [
-            {
-              url: ``,
-            },
-          ],
+          url: `https://mohsinyaqoob.com/work/${slug}`,
+          images: [],
         }}
       />
       <Flex

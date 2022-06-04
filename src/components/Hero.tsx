@@ -39,15 +39,16 @@ const Hero = () => {
         <Text fontSize={"32px"}>👋</Text>
       </HStack>
       <Text
-        w={"88%"}
+        w={"full"}
         mx={"auto"}
         lineHeight={["8"]}
         fontSize={["xl"]}
         textAlign={"center"}
         color={"white"}
       >
-        I’m a full-stack engineer, a designer, and a content creator. I work at
-        QSS Inc. as a Senior Software Engineer, and I’m a core member at{" "}
+        I’m a full-stack engineer, a designer, a content creator and a fitness
+        lover. Currently, I work at QSS Inc. as a Senior Software Engineer, and
+        I’m a core member at{" "}
         <Link
           color={"accent"}
           href={"http://github.com/mohsinyaqoob"}

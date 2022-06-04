@@ -62,7 +62,7 @@ const TopNav = () => {
           />
           <MenuList>
             {links.map((link, index) => (
-              <Link href={link.href}>
+              <Link key={index} href={link.href}>
                 <MenuItem>
                   <ChakraLink>{link.label}</ChakraLink>
                 </MenuItem>

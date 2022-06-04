@@ -3,11 +3,12 @@ import {
   Divider,
   Flex,
   HStack,
-  Link,
+  Link as ChakraLink,
   List,
   ListItem,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -16,62 +17,81 @@ const Footer = () => {
       <Flex justifyContent={"space-between"}>
         <List color={"gray"} spacing={4}>
           <ListItem>
-            <Link>Home</Link>
+            <Link href={"/"}>
+              <ChakraLink>Home</ChakraLink>
+            </Link>
           </ListItem>
           <ListItem>
-            <Link>Work</Link>
+            <Link href={"/"}>
+              <ChakraLink>Work</ChakraLink>
+            </Link>
           </ListItem>
           <ListItem>
-            <Link>Blog</Link>
+            <Link href={"/"}>
+              <ChakraLink>Blog</ChakraLink>
+            </Link>
           </ListItem>
           <ListItem>
-            <Link>Colofone</Link>
+            <Link href={"/"}>
+              <ChakraLink>Fitness</ChakraLink>
+            </Link>
           </ListItem>
           <ListItem>
-            <Link>Analytics</Link>
-          </ListItem>
-        </List>
-        <List color={"gray"} spacing={4}>
-          <ListItem>
-            <Link>Twitter</Link>
-          </ListItem>
-          <ListItem>
-            <Link>GitHub</Link>
-          </ListItem>
-          <ListItem>
-            <Link>LinkedIn</Link>
-          </ListItem>
-          <ListItem>
-            <Link>Discord</Link>
-          </ListItem>
-          <ListItem>
-            <Link>Instagram</Link>
+            <Link href={"/"}>
+              <ChakraLink>Let's Talk</ChakraLink>
+            </Link>
           </ListItem>
         </List>
         <List color={"gray"} spacing={4}>
           <ListItem>
-            <Link>Uses</Link>
+            <ChakraLink href="http://github.com/mohsinyaqoob" target={"_blank"}>
+              GitHub
+            </ChakraLink>
           </ListItem>
           <ListItem>
-            <Link>Gear</Link>
+            <ChakraLink
+              href="https://www.linkedin.com/in/mohsin-yaqoob-b08891162/"
+              target={"_blank"}
+            >
+              LinkedIn
+            </ChakraLink>
           </ListItem>
           <ListItem>
-            <Link>Bookmarks</Link>
+            <ChakraLink href="http://twitter.com/mohsinyqb" target={"_blank"}>
+              Twitter
+            </ChakraLink>
           </ListItem>
           <ListItem>
-            <Link>Books</Link>
+            <ChakraLink>Discord</ChakraLink>
           </ListItem>
           <ListItem>
-            <Link>Newsletters</Link>
+            <ChakraLink>Instagram</ChakraLink>
+          </ListItem>
+        </List>
+        <List color={"gray"} spacing={4}>
+          <ListItem>
+            <ChakraLink>Uses</ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ChakraLink>Gear</ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ChakraLink>Bookmarks</ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ChakraLink>Books</ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ChakraLink>Newsletters</ChakraLink>
           </ListItem>
         </List>
       </Flex>
       <HStack mt={12}>
         <Text>
           © {new Date().getFullYear()}
-          <Link color={"accent"} ml={4}>
+          <ChakraLink color={"accent"} ml={4}>
             Mohsin Yaqoob.
-          </Link>
+          </ChakraLink>
         </Text>
       </HStack>
     </Box>

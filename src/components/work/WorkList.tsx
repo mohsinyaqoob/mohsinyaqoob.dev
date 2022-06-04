@@ -24,7 +24,7 @@ const WorkList = (props) => {
             return (
               <WorkItem
                 slug={slug}
-                key={index + 1}
+                key={index}
                 progress={progress}
                 title={title}
                 description={description}

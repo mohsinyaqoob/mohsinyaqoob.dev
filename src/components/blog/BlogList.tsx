@@ -1,44 +1,46 @@
-import { Box, Heading, List, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  List,
+  Text,
+  Button,
+  VStack,
+  Stack,
+  Grid,
+  GridItem,
+  Flex,
+  Link,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import second from "@/components/work/WorkItem";
+import BlogItem from "./BlogItem";
+import { BlogPost } from "@/types/blog-post";
 
-type Props = {
-  showTotal?: number;
-};
-
-const blogItems = [
-  {
-    title: "Hello World!",
-  },
-  {
-    title: "Proframming with Dart!",
-  },
-  {
-    title: "How to create a Sanituy IO Model",
-  },
-];
-
-const BlogList = ({ showTotal, ...rest }: Props) => {
-  // Read x = showTotal posts from file systems
-  //   const workItems = workData.slice(0, showTotal);
+const BlogList = (props) => {
+  const { blogPosts, ...rest } = props;
   return (
-    <Box as="section" mt={16}>
-      <Heading size={"md"}>Recent Blog Posts.</Heading>
-      <List mt={4} spacing={4}>
-        {blogItems.map((blog, index) => (
-          <h1>{blog.title}</h1>
-        ))}
-      </List>
-      {/* <Link mt={6} color={"accent"} size={"md"}>
-          <Text mt={8}>View all.</Text>
-        </Link> */}
-      <Button
-        mt={6}
-        _hover={{ bg: "accent", color: "darkGray" }}
-        variant={"ghost"}
+    <VStack as="section" mt={16} align={"left"} {...rest}>
+      <Heading size={"md"} mb={8}>
+        Blog Posts.
+      </Heading>
+      <SimpleGrid
+        columns={[1, 1, 2]}
+        spacing="12"
+        textAlign="left"
+        rounded="lg"
       >
-        View all.
-      </Button>
-    </Box>
+        {blogPosts.map((blog, index) => (
+          <BlogItem
+            key={index}
+            title={blog.title}
+            description={blog.description}
+            thumbnail={blog.thumbnail}
+            slug={blog.slug}
+            tags={blog.tags}
+          />
+        ))}
+      </SimpleGrid>
+    </VStack>
   );
 };
 

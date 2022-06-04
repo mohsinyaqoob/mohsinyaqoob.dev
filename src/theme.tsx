@@ -29,6 +29,7 @@ const theme = extendTheme({
     red: "#DE0000",
     gradient: "linear(to-l, #00FFF0, #6A0FB2)",
     white: "#E0E0E0",
+    muted: "#718096",
   },
   breakpoints,
   components: {

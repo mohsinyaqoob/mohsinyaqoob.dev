@@ -7,26 +7,44 @@ import { BlogPost } from "@/types/blog-post";
 
 export const getBlogPosts = async (): Promise<BlogPost[]> => {
   const result: BlogPost[] = [];
-  const dir = path.join(process.cwd(), "./content/blog-posts");
+
+  const dir = path.join(process.cwd(), "./src/content/blog-posts");
   const blogPosts = await fs.readdir(dir);
 
   await Promise.all(
-    blogPosts.map(async (post) => {
-      const postPath = path.join(dir, post, "index.mdx");
-      const slug = post.replace(".mdx", "");
-
-      const fileContent = await fs.readFile(postPath, "utf8");
+    blogPosts.map(async (blogPost) => {
+      const blogPostPath = path.join(dir, blogPost, "index.mdx");
+      const slug = blogPost.replace(".mdx", "");
+      const fileContent = await fs.readFile(blogPostPath, "utf8");
 
       const {
         content,
-        data: { title, description, date },
+        data: {
+          title,
+          description,
+          date,
+          tags,
+          thumbnail,
+          coverImage,
+          publisher,
+          publisherImage,
+          publisherLink,
+        },
       } = matter(fileContent);
+
+      let tagsArray = tags ? tags.split(",") : [];
 
       result.push({
         title,
+        thumbnail,
+        coverImage,
         description,
         date,
         slug,
+        tags: tagsArray,
+        publisher,
+        publisherImage,
+        publisherLink,
         readingTime: readingTime(content).text,
       });
     })
@@ -38,11 +56,25 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
 export const getRecentBlogPosts = async (
   count: number
 ): Promise<BlogPost[]> => {
-  const posts = await getBlogPosts();
+  const blogPosts = await getBlogPosts();
 
-  const recentPosts = posts
+  const recentBlogPosts = blogPosts
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
     .slice(0, count);
 
-  return recentPosts;
+  return recentBlogPosts;
+};
+
+export const readBlogPost = async (slug: string) => {
+  const blogPostPath = path.join(
+    process.cwd(),
+    "./src/content/blog-posts",
+    slug,
+    "index.mdx"
+  );
+  return await fs.readFile(blogPostPath, "utf8");
+};
+
+export const getAbbr = (text: string) => {
+  return text.split(" ").map((letter) => letter.charAt(0).toUpperCase());
 };

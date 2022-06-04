@@ -95,15 +95,14 @@ const WorkItemPage = ({
                   <TimeIcon ml={[0, 0, 4]} /> {readingTime}
                 </Text>
               </Flex>
-              <HStack pb={4}>
+              <Flex gap={2} py={4} wrap={"wrap"} align={"left"}>
                 {tags.map((tag, index) => (
                   <Tag key={index}>{tag}</Tag>
                 ))}
-              </HStack>
+              </Flex>
             </VStack>
             <Text size="xl">{description}</Text>
             <MDXRemote {...source} components={MDXComponents} />
-            {content}
           </VStack>
         </Box>
       </Flex>

@@ -5,11 +5,9 @@ import {
   Box,
   CircularProgress,
   CircularProgressLabel,
-  HStack,
   Heading,
   Text,
   VStack,
-  TagCloseButton,
   Tag,
 } from "@chakra-ui/react";
 
@@ -57,11 +55,11 @@ const WorkItem = (props: WorkItem) => {
                 : `${formatDate(date)}`}
             </Text>
             <Text size="xl">{getMinimalString(description, 40)}...</Text>
-            <HStack pt={2}>
+            <Flex gap={2} pt={2} wrap={"wrap"} align={"left"}>
               {tags.map((tag, index) => (
                 <Tag key={index}>{tag}</Tag>
               ))}
-            </HStack>
+            </Flex>
           </VStack>
         </Flex>
       </ListItem>

@@ -42,7 +42,7 @@ const WorkItemPage = ({
         openGraph={{
           description,
           title: `${title} - Mohsin Yaqoob`,
-          url: `https://mohsinyaqoob.com/work/${slug}`,
+          url: `https://mohsinyaqoob.netlify.app/work/${slug}`,
           images: [],
         }}
       />

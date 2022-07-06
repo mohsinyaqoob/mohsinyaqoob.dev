@@ -26,8 +26,7 @@ const Blog = ({ blogPosts }) => {
     <>
       <VStack mt={[8, 16, 16]} justifyContent={"start"} align={"left"}>
         <Text>
-          The work I have done or currently doing is listed here. My work mostly
-          focuses on the React ecosystem.
+          Search through the blog posts that I have written over time.
         </Text>
         <InputGroup>
           <InputLeftElement

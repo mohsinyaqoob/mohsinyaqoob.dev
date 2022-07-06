@@ -1,7 +1,5 @@
-import { ExternalLinkIcon, LinkIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Divider,
   Heading,
   HStack,
   Image,

@@ -38,7 +38,7 @@ const Footer = () => {
           </ListItem>
           <ListItem>
             <Link href={"/"}>
-              <ChakraLink>Let's Talk</ChakraLink>
+              <ChakraLink>Hire me</ChakraLink>
             </Link>
           </ListItem>
         </List>

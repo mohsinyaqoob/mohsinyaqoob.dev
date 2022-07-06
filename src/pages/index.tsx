@@ -1,9 +1,11 @@
+import Head from "next/head";
+
 import BlogList from "@/components/blog/BlogList";
 import Hero from "@/components/Hero";
 import WorkList from "@/components/work/WorkList";
+
 import { getRecentBlogPosts } from "@/utils/blog";
 import { getRecentWork } from "@/utils/work";
-import Head from "next/head";
 
 const Index = ({ workItems, blogPosts }) => {
   return (

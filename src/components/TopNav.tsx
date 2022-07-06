@@ -15,11 +15,12 @@ import {
 import Link from "next/link";
 
 const links = [
+  { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
   { label: "Fitness", href: "/fitness" },
   { label: "Resume", href: "/resume" },
-  { label: "Let's Talk", href: "/lets-talk" },
+  { label: "Hire me", href: "/lets-talk" },
 ];
 
 const TopNav = () => {

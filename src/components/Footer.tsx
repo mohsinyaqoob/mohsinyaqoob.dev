@@ -11,36 +11,27 @@ import {
 import Link from "next/link";
 
 const Footer = () => {
+  const links = [
+    { label: "Home", href: "/" },
+    { label: "Work", href: "/work" },
+    { label: "Blog", href: "/blog" },
+    { label: "Fitness", href: "/fitness" },
+    { label: "Resume", href: "/resume" },
+    { label: "Hire me", href: "/hire-me" },
+  ];
+
   return (
     <Box mt={16}>
       <Divider my={8} bg={"lightGray"} orientation={"horizontal"} />
       <Flex justifyContent={"space-between"}>
         <List color={"gray"} spacing={4}>
-          <ListItem>
-            <Link href={"/"}>
-              <ChakraLink>Home</ChakraLink>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href={"/"}>
-              <ChakraLink>Work</ChakraLink>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href={"/"}>
-              <ChakraLink>Blog</ChakraLink>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href={"/"}>
-              <ChakraLink>Fitness</ChakraLink>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href={"/"}>
-              <ChakraLink>Hire me</ChakraLink>
-            </Link>
-          </ListItem>
+          {links.map((link, index) => (
+            <ListItem key={index}>
+              <Link href={link.href}>
+                <ChakraLink>{link.label}</ChakraLink>
+              </Link>
+            </ListItem>
+          ))}
         </List>
         <List color={"gray"} spacing={4}>
           <ListItem>

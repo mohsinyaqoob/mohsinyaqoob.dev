@@ -20,7 +20,7 @@ const links = [
   { label: "Blog", href: "/blog" },
   { label: "Fitness", href: "/fitness" },
   { label: "Resume", href: "/resume" },
-  { label: "Hire me", href: "/lets-talk" },
+  { label: "Hire me", href: "/hire-me" },
 ];
 
 const TopNav = () => {
@@ -47,7 +47,9 @@ const TopNav = () => {
         {links.map((link, index) => (
           <ListItem key={index}>
             <Link href={link.href}>
-              <ChakraLink>{link.label}</ChakraLink>
+              <ChakraLink color={link.label === "Hire me" && "accent"}>
+                {link.label}
+              </ChakraLink>
             </Link>
           </ListItem>
         ))}
@@ -65,7 +67,9 @@ const TopNav = () => {
             {links.map((link, index) => (
               <Link key={index} href={link.href}>
                 <MenuItem>
-                  <ChakraLink>{link.label}</ChakraLink>
+                  <ChakraLink color={link.label === "Hire me" && "accent"}>
+                    {link.label}
+                  </ChakraLink>
                 </MenuItem>
               </Link>
             ))}

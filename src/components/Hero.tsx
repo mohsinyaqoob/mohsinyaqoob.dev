@@ -1,18 +1,9 @@
-import { ExternalLinkIcon, LinkIcon } from "@chakra-ui/icons";
-import {
-  VStack,
-  HStack,
-  Heading,
-  Text,
-  Box,
-  Img as ChakraImage,
-  Link,
-} from "@chakra-ui/react";
 import Image from "next/image";
-import { useState } from "react";
+import { ExternalLinkIcon, LinkIcon } from "@chakra-ui/icons";
+import { VStack, HStack, Heading, Text, Box, Link } from "@chakra-ui/react";
 
+import WavingHand from "@/components/WavingHand";
 import SelfImage from "../assets/images/self-avatar.png";
-import Story from "./Story";
 
 const Hero = () => {
   return (
@@ -36,7 +27,9 @@ const Hero = () => {
           </Text>
           .
         </Heading>
-        <Text fontSize={"32px"}>👋</Text>
+        <Text fontSize={"32px"}>
+          <WavingHand />
+        </Text>
       </HStack>
       <Text
         w={"full"}

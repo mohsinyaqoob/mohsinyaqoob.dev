@@ -46,18 +46,10 @@ const Hero = () => {
         textAlign={"center"}
         color={"white"}
       >
-        I’m a full-stack engineer, a designer, a content creator and a fitness
-        lover. Currently, I work at QSS Inc. as a Senior Software Engineer, and
-        I’m a core member at{" "}
-        <Link
-          color={"accent"}
-          href={"http://github.com/mohsinyaqoob"}
-          target={"_blank"}
-        >
-          IMD Core
-          <ExternalLinkIcon mx={2} />
-        </Link>
-        , contributing as a Developer Advocate.
+        I’m a full-stack engineer by profession, a designer by passion, and
+        content creator and a fitness enthusiast. Here, I share my experience as
+        a full-stack engineer and everything I'm learning about React,
+        Typescript, Figma, Serverless, and more.
       </Text>
     </VStack>
   );

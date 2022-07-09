@@ -146,12 +146,19 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
 const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
   const slug = slugify(props.children as string, { lower: true });
   return (
-    <Link alignItems="flex-end" display="flex" href={`#${slug}`} role="group">
+    <Link
+      alignItems="flex-end"
+      marginTop={"32px"}
+      display="flex"
+      href={`#${slug}`}
+      role="group"
+    >
       <Box
         {...props}
         display="inline"
         color="gray.700"
         fontFamily="heading"
+        fontWeight={"bold"}
         _dark={{
           color: "white",
         }}
@@ -185,7 +192,9 @@ const Anchor = (props) => {
   const { colorMode } = useColorMode();
   return (
     <chakra.a
+      target={"_blank"}
       color={mode("purple.500", "purple.300")({ colorMode })}
+      marginTop={"62px"}
       {...props}
     />
   );
@@ -210,7 +219,7 @@ const MDXComponents = {
   p: (props) => (
     <chakra.p
       w={"full"}
-      style={{ lineHeight: 1.5, margin: "8px 0px", width: "100%" }}
+      style={{ lineHeight: 1.8, margin: "16px 0px", width: "100%" }}
       {...props}
     />
   ),

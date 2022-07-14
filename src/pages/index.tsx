@@ -10,11 +10,6 @@ import { getRecentWork } from "@/utils/work";
 const Index = ({ workItems, blogPosts }) => {
   return (
     <>
-      <Head>
-        <title>
-          Full-stack Engineer, React, Typescript, NodeJS, AWS - Mohsin Yaqoob
-        </title>
-      </Head>
       <Hero />
       {/* Projects */}
       <WorkList mt={24} workItems={workItems} />

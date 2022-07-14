@@ -17,7 +17,6 @@ import {
   VStack,
   Heading,
   Text,
-  HStack,
   Tag,
 } from "@chakra-ui/react";
 import { MDXRemote } from "next-mdx-remote";
@@ -29,7 +28,6 @@ const WorkItemPage = ({
   description,
   date,
   source,
-  content,
   readingTime,
 }) => {
   const { query } = useRouter();
@@ -42,8 +40,7 @@ const WorkItemPage = ({
         openGraph={{
           description,
           title: `${title} - Mohsin Yaqoob`,
-          url: `https://mohsinyaqoob.netlify.app/work/${slug}`,
-          images: [],
+          url: `http://mohsinyaqoob.com/blog/${slug}`,
         }}
       />
       <Flex

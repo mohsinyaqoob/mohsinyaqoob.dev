@@ -27,7 +27,15 @@ const index = ({ workItems }) => {
 
   return (
     <>
-      <NextSeo title="Work Portfolio - Mohsin Yaqoob" />
+      <NextSeo
+        title={`Full-stack Engineer, UI Baker, Design evangelist from Kashmir - Mohsin Yaqoob`}
+        description={""}
+        openGraph={{
+          description: "description",
+          title: "title",
+          url: "http://mohsinyaqoob.com",
+        }}
+      />
       <VStack mt={[8, 16, 16]} justifyContent={"start"} align={"left"}>
         <Text>
           The work I have done or currently doing is listed here. My work mostly

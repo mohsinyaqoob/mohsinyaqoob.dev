@@ -56,7 +56,7 @@ const BlogPage = ({
         openGraph={{
           description,
           title: `${title} - Mohsin Yaqoob`,
-          url: `http://mohsinyaqoob.netlify.app/blog/${slug}`,
+          url: `http://mohsinyaqoob.com/blog/${slug}`,
           images: [
             {
               url: coverImage,

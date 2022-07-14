@@ -1,9 +1,6 @@
-import Image from "next/image";
-import { ExternalLinkIcon, LinkIcon } from "@chakra-ui/icons";
-import { VStack, HStack, Heading, Text, Box, Link } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Text, Box, Image } from "@chakra-ui/react";
 
 import WavingHand from "@/components/WavingHand";
-import SelfImage from "../assets/images/self-avatar.png";
 
 const Hero = () => {
   return (
@@ -17,7 +14,13 @@ const Hero = () => {
         overflow={"hidden"}
         rounded={"full"}
       >
-        <Image src={SelfImage} style={{ borderRadius: "100%" }} />
+        <Image
+          src={
+            "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657783651/mohsinyaqoob.com/image_11.png"
+          }
+          height={"full"}
+          width={"full"}
+        />
       </Box>
       <HStack alignItems={"center"}>
         <Heading size={"lg"} color={"white"}>

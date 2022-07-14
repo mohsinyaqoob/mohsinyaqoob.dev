@@ -154,6 +154,7 @@ const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
       role="group"
     >
       <Box
+        mt={6}
         {...props}
         display="inline"
         color="gray.700"
@@ -219,7 +220,7 @@ const MDXComponents = {
   p: (props) => (
     <chakra.p
       w={"full"}
-      style={{ lineHeight: 1.8, margin: "16px 0px", width: "100%" }}
+      style={{ lineHeight: 1.8, margin: "8px 0px", width: "100%" }}
       {...props}
     />
   ),
@@ -237,8 +238,8 @@ const MDXComponents = {
         status="warning"
         variant="left-accent"
         {...props}
-        w="unset"
-        mx={-4}
+        my={4}
+        w="full"
         p={0}
         pl={2}
         pr={2}

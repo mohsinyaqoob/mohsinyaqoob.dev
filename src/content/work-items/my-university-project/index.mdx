@@ -1,0 +1,106 @@
+---
+progress: 100
+title: iHealth - My university project
+description: I built an Electronic Health Record system based on unique Aadhaar Number as a university project.
+tags: ReactJS, MongoDB, NodeJS, ExpressJS, University Project
+date: Jan 24, 2022
+---
+
+<img src="https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657704728/mohsinyaqoob.com/ehr-cover.png" />
+
+> iHealth was developed as a university project at the University of Kashmir by me and [Mudassir Najar]() under the guidance of [Maroof Qadri](http://itss.uok.edu.in/Main/ProfilePage.aspx?Profile=0346), Director ITSS, University of Kashmir.
+
+Now let's get to the point. What is iHealth and how did we develop and test it. I will be mentioning all the technologies we used, and why we decided to use the MERN (MongoDB, ExpressJS, React and NodeJS) stack.
+
+## What is iHealth?
+
+iHealth is an electronic health record system based on a 12-digit unique Aadhaar Number. (XXXX-XXXX-XXXX). Although iHealth was built as a college project it's very much capable of being used inside any small-to-medium-scale health centre or hospital. iHealth has been developed and tested following industry standards. Anyone who wants to use iHealth can empower his organization by providing extensive access to patients’ personal health information, allowing doctors to create a medical system that keeps the patient's health history centralized and prioritizes prevention over treatment.
+
+And of course, iHealth is open-source and free to use. Go ahead and give it a star o [GitHub](http://github.com/mohsinyaqoob/ihealth). ⭐
+
+Ok, now that you understood what iHealth is, let's get into the building blocks of iHealth.
+
+iHealth is built as a web application that runs inside a browser. This means authorized people can access it from any device that has a web browser installed on it.
+
+iHealth is built with the latest technologies that are trending in the software industry. (as of now 1st January 2022, because the software industry is evolving every day).
+
+We used the MERN stack, where 'M' stands for MongoDB, 'E' stands for ExpressJS, 'R' stands for ReactJS and 'N' stands for NodeJS. For styling, we used Bootstrap 4 and built our UI using the most famous AdminLTE 3 Dashboard template.
+
+Furthermore, we used the REST API protocol for data transfer between our front-end and the backend.
+
+## 1. ReactJS:
+
+React is remarkably flexible. You can use it on a vast variety of platforms to build quality user interfaces. React was built by Facebook in 2011. Facebook is one of the biggest Social Networking websites in the world today. In 2012, Instagram also started using it, which is a subsidiary of Facebook.
+
+In 2013, Facebook made React.js open-sourced. Initially, the developer community rejected it because it used Markup and JavaScript in a single file. But as more people experimented with it, they started embracing the component-centric approach for separating concerns.
+
+In 2014, many large companies started using React.js in their production environments.
+
+In 2015, Facebook open-sourced React Native too. It is a library that allows us to create native mobile apps for Android and iOS using React.js.
+
+In 2016, with version 15, React.js started using Semantic Versioning. This also helped convey to the developer's community that React was more stable.
+
+Today, React.js is used by many Fortune 500 companies. Facebook has full-time React development staff. They regularly release bug fixes, enhancements, blog posts, and documentation.
+
+You can use ReactJS by installing a command-line tool called as create-react-app or CRA in short. Just do a `npm install -g create-react-app` or `npx install create-react-app`.
+
+Here is a simple react component that returns a heading
+
+```typescript
+import React from "react";
+
+const IHealth = () => {
+  return <h1>Hello and Welcome to iHealth</h1>;
+};
+
+export default IHealth;
+```
+
+## 2. Expres.JS:
+
+To communicate over HTTP, we need a web server. We decided to use ExpressJS which is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+Getting started with express is simple. Make sure you have NodeJS installed on your machine and then use the below code snippet:
+
+```typescript
+const express = require("express");
+const app = express();
+
+app.get("/", function (req, res) {
+  res.send("Hello World");
+});
+
+app.listen(3000);
+```
+
+## 3. MongoDB:
+
+MongoDB provided us with many benefits. Its flexible schema made it easy to evolve and store data in a way that was easy for us to work with. MongoDB is also built to scale up quickly and supports all the main features of modern databases such as transactions.
+
+For iHealth, we used MongoDB Atlas which is a storage-as-a-service platform.
+
+<img src="https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657784642/mohsinyaqoob.com/data-explorer-dbs.png" />
+
+## 4. Mongoose:
+
+We used Mongoose as an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+
+## 5. Authentication:
+
+Of course, some of the HTTP end-points need to be protected from unauthorized users. For example, we don't want random people to hit our server and fetch the list of patients. We need the data to be protected and allow only specific people to have access to the data iHealth is holding with itself.
+
+For authentication we used JWT which stands for JSON Web Token. JWT is a proposed Internet standard for creating data with optional signature and/or optional encryption whose payload holds JSON that asserts some number of claims. The tokens are signed either using a private secret or a public/private key.
+
+<img src="https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657784830/mohsinyaqoob.com/Zrzut-ekranu-2017-05-01-05_59_37.webp" />
+
+For all authorized and authenticated users, we sent back a token that was validated for each request they send to the web server. Only the users with the correct JWT token could have access to the data.
+
+You can read more about [Json Web Token here](https://jwt.io/)
+
+## Conclusion
+
+We built somthing that can be reused by somone else. If you are a college or a university student and would like to reuse what we created go ahead. Do whatever you want to do with this project. You can add new functionaloty on top of the old one.
+
+If you are a professional developer, go ahead and reuse my code to build somthing awesome.
+
+You will find a lot of documentation about the technologies that are used to build iHealth.

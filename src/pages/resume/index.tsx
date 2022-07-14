@@ -26,17 +26,30 @@ const ResumePage = () => {
         <Text fontSize={"xl"}>Full-stack Engineer</Text>
         <List my={4} display={"flex"} flexDir={"row"} gap={4}>
           <ListItem>
-            <Link href={"#"} display={"block"} color={"accent"}>
+            <Link
+              href={"#"}
+              onClick={() => alert("This functionality wont work yet")}
+              display={"block"}
+              color={"accent"}
+            >
               Download
             </Link>
           </ListItem>
           <ListItem>
-            <Link href={"#"} color={"accent"}>
+            <Link
+              onClick={() => alert("This functionality wont work yet")}
+              href={"#"}
+              color={"accent"}
+            >
               Share
             </Link>
           </ListItem>
           <ListItem>
-            <Link href={"#"} color={"accent"}>
+            <Link
+              onClick={() => alert("This functionality wont work yet")}
+              href={"#"}
+              color={"accent"}
+            >
               Print
             </Link>
           </ListItem>
@@ -145,6 +158,13 @@ const ResumePage = () => {
                   <Text>Layout Designer (Captured Illusions)</Text>
                 </ListItem>
               </List>
+            </HStack>
+            <HStack>
+              <Text color={"lightGray"} textAlign={"center"}>
+                This CV is not complete yet. I am adding more content to this.
+                Plus, I will be adding an export to PDF and a share link
+                functionality to this page too.
+              </Text>
             </HStack>
           </VStack>
         </Box>

@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import BlogList from "@/components/blog/BlogList";
 import Hero from "@/components/Hero";
 import WorkList from "@/components/work/WorkList";

@@ -18,8 +18,21 @@ import {
   Heading,
   Text,
   Tag,
+  HStack,
 } from "@chakra-ui/react";
 import { MDXRemote } from "next-mdx-remote";
+import {
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TelegramShareButton,
+  TelegramIcon,
+} from "react-share";
 
 const WorkItemPage = ({
   progress,
@@ -41,6 +54,15 @@ const WorkItemPage = ({
           description,
           title: `${title} - Mohsin Yaqoob`,
           url: `http://mohsinyaqoob.com/blog/${slug}`,
+          images: [
+            {
+              url: "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657800924/mohsinyaqoob.com/Group_2.png",
+              width: 1200,
+              height: 630,
+              alt: "Mohsin Yaqoob",
+              type: "image/png",
+            },
+          ],
         }}
       />
       <Flex
@@ -97,6 +119,42 @@ const WorkItemPage = ({
             <Text size="xl">{description}</Text>
             <MDXRemote {...source} components={MDXComponents} />
           </VStack>
+          <HStack gap={2} mt={16} p={0} wrap={"wrap"}>
+            <TwitterShareButton
+              url={`http://mohsinyaqoob.com/work/${slug}`}
+              title={title}
+              hashtags={tags.map((tag) => tag.trim())}
+            >
+              <TwitterIcon size={40} round />
+            </TwitterShareButton>
+            <FacebookShareButton
+              url={`http://mohsinyaqoob.com/work/${slug}`}
+              quote={title}
+              className="share-button"
+            >
+              <FacebookIcon size={40} round />
+            </FacebookShareButton>
+            <LinkedinShareButton
+              url={`http://mohsinyaqoob.com/work/${slug}`}
+              title={title}
+              className="share-button"
+            >
+              <LinkedinIcon size={40} round />
+            </LinkedinShareButton>
+            <WhatsappShareButton
+              url={`http://mohsinyaqoob.com/work/${slug}`}
+              className="share-button"
+            >
+              <WhatsappIcon size={40} round />
+            </WhatsappShareButton>
+            <TelegramShareButton
+              url={`http://mohsinyaqoob.com/work/${slug}`}
+              title={title}
+              className="share-button"
+            >
+              <TelegramIcon size={40} round />
+            </TelegramShareButton>
+          </HStack>
         </Box>
       </Flex>
     </>

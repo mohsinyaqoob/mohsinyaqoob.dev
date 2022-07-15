@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           handle: "@mohsinyqb",
         }}
         openGraph={{
-          url: "https://mohsinyaqoob.com",
+          url: "http://mohsinyaqoob.com",
           title:
             "Mohsin Yaqoob - Full-stack engineer and a design enthusiast from Kashmir",
           description:
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           locale: "en_US",
           images: [
             {
-              url: "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657800924/mohsinyaqoob.com/Group_2.png",
+              url: "http://res.cloudinary.com/mohsinyaqoob/image/upload/v1657800924/mohsinyaqoob.com/Group_2.png",
               width: 1200,
               height: 630,
               alt: "Mohsin Yaqoob",

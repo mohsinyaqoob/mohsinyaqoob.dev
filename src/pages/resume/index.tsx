@@ -1,11 +1,13 @@
 import {
   Box,
+  Flex,
   Heading,
   HStack,
   Image,
   Link,
   List,
   ListItem,
+  Tag,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -67,7 +69,7 @@ const ResumePage = () => {
           overflow={"scroll"}
           overflowY={"hidden"}
         >
-          <VStack w={"680px"} gap={12} align={"left"}>
+          <VStack w={"680px"} gap={6} align={"left"}>
             <HStack alignItems={"center"} gap={12}>
               <Box
                 h={32}
@@ -92,46 +94,58 @@ const ResumePage = () => {
               </VStack>
             </HStack>
 
-            <HStack alignItems={"center"} gap={12}>
-              <VStack align={"right"} spacing={0} flex={1}>
-                <List textAlign={"right"} spacing={1}>
-                  <ListItem>
-                    <Text>Mohsin Yaqoob</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>+919055404321</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>hi@mohsinyaqoob.com</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>github.com/mohsinyaqoob</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>mohsinyaqoob.com</Text>
-                  </ListItem>
-                </List>
-              </VStack>
-              <Text
-                fontWeight={700}
-                bgGradient="linear(to-l, #ffd500, #FF0080)"
-                bgClip="text"
-                flex={2}
-              >
-                A multidiciplinary developer with passion for elegant,
-                innovative and functional user interfaces. Over 3 years of
-                experience in full-stack engineering industry with more than 20+
-                projects delivered. Designed pioneering digital products across
-                industry verticals including retail, healthcare, automotive,
-                finance and more.
-              </Text>
-            </HStack>
+            <VStack alignItems={"center"}>
+              <HStack gap={12}>
+                <VStack align={"right"} spacing={0} flex={1}>
+                  <List textAlign={"right"} spacing={1}>
+                    <ListItem>
+                      <Text>Mohsin Yaqoob</Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>+919055404321</Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>hi@mohsinyaqoob.com</Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>github.com/mohsinyaqoob</Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>mohsinyaqoob.com</Text>
+                    </ListItem>
+                  </List>
+                </VStack>
+                <Text
+                  fontWeight={700}
+                  bgGradient="linear(to-l, #ffd500, #FF0080)"
+                  bgClip="text"
+                  flex={2}
+                >
+                  A multidiciplinary developer with passion for elegant,
+                  innovative and functional user interfaces. Over 3 years of
+                  experience in full-stack engineering industry with more than
+                  20+ projects delivered. Designed pioneering digital products
+                  across industry verticals including retail, healthcare,
+                  automotive, finance and more.
+                </Text>
+              </HStack>
+            </VStack>
 
+            <Heading
+              bgGradient="linear(to-l, #ffd500, #FF0080)"
+              bgClip="text"
+              pt={8}
+              textAlign={"center"}
+              w={"full"}
+              fontSize={16}
+            >
+              Professional Life
+            </Heading>
             <HStack alignItems={"center"} gap={12}>
               <VStack align={"right"} spacing={0} flex={1}>
                 <List textAlign={"right"} spacing={1}>
                   <ListItem>
-                    <Text>October 2021 — Present</Text>
+                    <Text fontWeight={"bold"}>October 2021 — Present *</Text>
                   </ListItem>
                   <ListItem>
                     <Text>July 2019 — August 2021</Text>
@@ -159,12 +173,91 @@ const ResumePage = () => {
                 </ListItem>
               </List>
             </HStack>
-            <HStack>
-              <Text color={"lightGray"} textAlign={"center"}>
-                This CV is not complete yet. I am adding more content to this.
-                Plus, I will be adding an export to PDF and a share link
-                functionality to this page too.
-              </Text>
+
+            <Heading
+              bgGradient="linear(to-l, #ffd500, #FF0080)"
+              bgClip="text"
+              pt={8}
+              textAlign={"center"}
+              w={"full"}
+              fontSize={16}
+            >
+              Education
+            </Heading>
+            <HStack alignItems={"center"} gap={12}>
+              <VStack align={"right"} spacing={0} flex={1}>
+                <List textAlign={"right"} spacing={1}>
+                  <ListItem>
+                    <Text>November 2019 — July 2021</Text>
+                  </ListItem>
+                  <ListItem>
+                    <Text>July 2015 — August 2018</Text>
+                  </ListItem>
+                  <ListItem>
+                    <Text>August 2015 — Sept 2018</Text>
+                  </ListItem>
+                </List>
+              </VStack>
+              <List flex={2} spacing={1}>
+                <ListItem>
+                  <Text>
+                    M.Sc. IT from University of Kashmir, Hazratbal, Srinagar.
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text>GNIIT Cloud & Mobile Software Engineering</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>B.Sc. IT from Sri Pratap College, Srinagar</Text>
+                </ListItem>
+              </List>
+            </HStack>
+            <Heading
+              bgGradient="linear(to-l, #ffd500, #FF0080)"
+              bgClip="text"
+              pt={8}
+              textAlign={"center"}
+              w={"full"}
+              fontSize={16}
+            >
+              Work Done
+            </Heading>
+            <HStack alignItems={"center"} gap={12}>
+              <VStack
+                w={96}
+                // h={48}
+                rounded={"md"}
+                boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
+                // border={"1px solid #eee"}
+                p={6}
+                align={"left"}
+              >
+                <Heading fontSize={16}>Automation Command Center</Heading>
+                <Text color={"muted"}>Ortho Clinical Diagnostics, France</Text>
+                <Text pt={2}>
+                  Worked as a full-stack engineer with Ortho Clinical
+                  Diagnostics, France. Implemented best design paterns on the
+                  Autumation Command Center for VITROS.
+                </Text>
+              </VStack>
+
+              <VStack
+                w={96}
+                // h={48}
+                rounded={"md"}
+                boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
+                // border={"1px solid #eee"}
+                p={6}
+                align={"left"}
+              >
+                <Heading fontSize={16}>SPARCA AI</Heading>
+                <Text color={"muted"}>Customer Crunch, Sydney</Text>
+                <Text pt={2}>
+                  Worked on a business insights generator app. The said puts the
+                  actors inside a business unit into a questionaire and
+                  generated valuable business insights for he organization.
+                </Text>
+              </VStack>
             </HStack>
           </VStack>
         </Box>

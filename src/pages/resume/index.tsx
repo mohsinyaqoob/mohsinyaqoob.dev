@@ -222,9 +222,8 @@ const ResumePage = () => {
             >
               Work Done
             </Heading>
-            <HStack alignItems={"center"} gap={12}>
+            <VStack alignItems={"center"} gap={4}>
               <VStack
-                w={96}
                 // h={48}
                 rounded={"md"}
                 boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
@@ -242,7 +241,6 @@ const ResumePage = () => {
               </VStack>
 
               <VStack
-                w={96}
                 // h={48}
                 rounded={"md"}
                 boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
@@ -258,7 +256,7 @@ const ResumePage = () => {
                   generated valuable business insights for he organization.
                 </Text>
               </VStack>
-            </HStack>
+            </VStack>
           </VStack>
         </Box>
       </Box>

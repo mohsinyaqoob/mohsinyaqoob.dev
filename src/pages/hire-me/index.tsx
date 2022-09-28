@@ -6,7 +6,7 @@ const HireMe = () => {
   return (
     <React.Fragment>
       {" "}
-      <NextSeo title="Fitness - Mohsin Yaqoob" />
+      <NextSeo title="Hire me - Mohsin Yaqoob" />
       <VStack mt={[8, 16, 16]} justifyContent={"start"} align={"left"}>
         <Text>
           Please write me an email at{" "}

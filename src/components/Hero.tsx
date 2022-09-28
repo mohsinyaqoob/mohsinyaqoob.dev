@@ -16,7 +16,7 @@ const Hero = () => {
       >
         <Image
           src={
-            "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1657783651/mohsinyaqoob.com/image_11.png"
+            "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664363386/mohsinyaqoob.com/mohsin-yaqoob-com-blog-picture.png"
           }
           height={"full"}
           width={"full"}

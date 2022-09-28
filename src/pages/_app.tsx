@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <NextSeo
-        title="Mohsin Yaqoob - Full-stack Engineer, UI Baker, Design enthusiast."
-        description="Full-stack Engineer, UI Designer, and Fitness lover."
+        title="Freelance Reactjs, Nodejs, Typescript Developer from India - Mohsin Yaqoob"
+        description="Full-stack Developer from India. Works with React, Nodejs, Typescript. Over 3 years of experience in full-stack engineering industry with more than 100+ projects delivered. Designed pioneering digital products across industry verticals including retail, healthcare, automotive, finance and more."
         twitter={{
           cardType: "summary_large_image",
           handle: "@mohsinyqb",

@@ -9,7 +9,6 @@ const Index = ({ workItems, blogPosts }) => {
   return (
     <>
       <Hero />
-      {/* Projects */}
       <WorkList mt={24} workItems={workItems} />
       <BlogList mt={24} blogPosts={blogPosts} />
     </>

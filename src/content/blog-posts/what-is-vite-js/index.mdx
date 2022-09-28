@@ -1,0 +1,67 @@
+---
+title: An introduction to Vite.js
+description: Vite - A development environment that can finally catch up with you.
+date: September 28, 2022
+tags: vite, Javascript, frontend, react, build tools
+thumbnail: https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664363118/mohsinyaqoob.com/vite-thumbnail.png
+coverImage: https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664362869/mohsinyaqoob.com/vite.png
+publisher: Mohsin Yaqoob
+publisherImage: https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664363386/mohsinyaqoob.com/mohsin-yaqoob-com-blog-picture.png
+publisherLink: https://www.linkedin.com/in/mohsin-yaqoob-b08891162
+---
+
+[Vite](https://vitejs.dev/guide/) is a Javascript build tool that simplifies the way we build and develop front-end web applications. At its core, it does two things:
+
+**One, It Serves your code locally during development, and two, it bundles your Javascript, CSS and other assets together for production.**
+
+<img src="https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664364447/mohsinyaqoob.com/dev-server-and-bundling-mohsin-yaqoob.png" />
+
+There are many other tools out there that do the same thing. For example, we have WebPack, but what makes [Vite](https://vitejs.dev/guide/) different?
+
+Well [Vite](https://vitejs.dev/guide/) was created by [Evan Yu](https://evanyou.me/) who also created [Vue.js](https://vuejs.org/) as a way to both simplify and speed up the build process.
+
+Not long ago web developers had no native way to combine Javascript files in a modular way this led to tools like Webpack and [Rollup](https://rollupjs.org/guide/en/) that concatenate multiple files together into a single bundle for the browser.
+
+The problem is that this process becomes increasingly slow as the app adds more code and dependencies.
+
+In 2015, EcmaScript modules were introduced and by 2020 it had wide browser support allowing developers to import and export code from different files in the browser. [Vite](https://vitejs.dev/guide/) leverages native ES modules in the browser to load your code instantly no matter how large the app is it also supports hot module replacement for an extremely fast feedback loop during development. When building for production, it uses to [Rollup](https://rollupjs.org/guide/en/) under the hood so you don't have to worry about configuring.
+
+It's an opinionated tool that provides conventions that work out of the box for the majority of developers.
+
+Before you get started with Vite, make sure to have the following:
+
+> Node.js version 12.2.0+ installed on your machine. You can install the latest version of Node.js with How To Install Node.js.
+
+> Yarn package manager version 1.22.0+ installed on your machine and familiarity with Yarn workflows. Install Yarn with Step 1 in How To Install and Use the Yarn Package Manager for Node.js.
+
+> Familiarity with HTML, CSS, and modern JavaScript. It also helps to know modern JS used in React.
+
+> A foundational knowledge of React, which you can learn with the How To Code in React series.
+
+> A mobile phone connected to the same Wifi network as your computer to preview your app from mobile.
+
+## Getting started with Vite for React.JS
+
+To get started with [Vite](https://vitejs.dev/guide/), run: `yarn create vite` from the command line and then follow the prompts. You can choose a starter project with your favourite front-end framework.
+
+For React.JS you can type `yarn create vite your-app-name --template react` and you Vite will automa generate the React boilerplate for your project.
+
+You'll also notice the project comes with a vite.config.ts file. It has a plug-in ecosystem that can extend it with additional features and you can also manually override the [Rollup](https://rollupjs.org/guide/en/) defaults when necessary.
+
+There are some cool plugins out there like [vite-ssr](https://vite-plugin-ssr.com/) that can do server-side rendering like Next.js.
+
+<img src="https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664382260/vite-ssr-plugin-mohsinyaqoob-com.png" />
+
+Now to serve the application locally run `npm run dev`.
+
+Even if you install a bunch of big dependencies like lodash and moment, the time to run the dev server does not change.
+
+If you open the network tab in the browser dev tools you'll notice that instead of importing a single Javascript bundle file it's importing our actual source code like a raw .tsx file.
+
+In this case, it also makes typescript about 20 to 30 times faster because it skips type checking and uses ES build to transpile your code.
+
+Now as you're developing your app, you might change the state of it in the UI and then realize that some of the code needs to change when you modify the source code the changes will be reflected instantly without losing the state of the application. That's what we call hot module replacement.
+
+Now run `npm build` to build the app for production.
+
+This will generate a Javascript bundle with [Rollup](https://rollupjs.org/guide/en/) and do a bunch of automatic optimizations like automatic code-splitting for any dynamic imports and CSS.

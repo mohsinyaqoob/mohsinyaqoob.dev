@@ -1,20 +1,27 @@
 import {
   Box,
+  Divider,
   Flex,
   Heading,
   HStack,
   Image,
   Link,
+  LinkBox,
   List,
   ListItem,
+  OrderedList,
+  TableCaption,
   Tag,
   Text,
+  UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import React from "react";
+import resumeData from "../../data/resume";
 
 const ResumePage = () => {
+  const { introduction, professional, education, workDone } = resumeData;
   return (
     <>
       <NextSeo title="Resume - Mohsin Yaqoob" />
@@ -24,9 +31,7 @@ const ResumePage = () => {
         mt={[8, 16, 16]}
         justifyContent={"start"}
       >
-        <Heading size={"2xl"}>Mohsin Yaqoob</Heading>
-        <Text fontSize={"xl"}>Full-stack Engineer</Text>
-        <List my={4} display={"flex"} flexDir={"row"} gap={4}>
+        <List mt={4} display={"flex"} flexDir={"row"} gap={4}>
           <ListItem>
             <Link
               href={"#"}
@@ -62,8 +67,8 @@ const ResumePage = () => {
           minH={"520px"}
           bg={"#fff"}
           rounded={"md"}
-          p={16}
-          fontSize={"md"}
+          p={12}
+          fontSize={"sm"}
           fontFamily={"Space Grotesk"}
           color={"lightGray"}
           overflow={"scroll"}
@@ -80,17 +85,16 @@ const ResumePage = () => {
                 alignItems={"center"}
               >
                 <Box w={32} h={32} rounded={"full"} overflow={"hidden"}>
-                  <Image
-                    src={
-                      "https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=3422df4a46d2c81c35bf4687a2fa9c52"
-                    }
-                  />
+                  <Image src={introduction.avatarUrl} />
                 </Box>
               </Box>
-              <VStack align={"left"} spacing={0} flex={2}>
-                <Text fontWeight={"bold"}>Mohsin Yaqoob</Text>
-                <Heading>Full-stack Engineer</Heading>
-                <Text color={"muted"}>Srinagar, Jammu and Kashmir</Text>
+              <VStack align={"left"} spacing={1} flex={2}>
+                <Text fontWeight={"bold"}>{introduction.name}</Text>
+                <Heading>{introduction.designation}</Heading>
+                <Text color={"muted"}>
+                  {introduction.primaryAddress} |{" "}
+                  {introduction.secondaryAddress}
+                </Text>
               </VStack>
             </HStack>
 
@@ -99,19 +103,23 @@ const ResumePage = () => {
                 <VStack align={"right"} spacing={0} flex={1}>
                   <List textAlign={"right"} spacing={1}>
                     <ListItem>
-                      <Text>Mohsin Yaqoob</Text>
+                      <Text>{introduction.name}</Text>
                     </ListItem>
                     <ListItem>
-                      <Text>+919055404321</Text>
+                      <Text>{introduction.phone}</Text>
                     </ListItem>
                     <ListItem>
-                      <Text>hi@mohsinyaqoob.com</Text>
+                      <Text>{introduction.email}</Text>
                     </ListItem>
                     <ListItem>
-                      <Text>github.com/mohsinyaqoob</Text>
+                      <Link href={introduction.github} target={"_blank"}>
+                        {introduction.github}
+                      </Link>
                     </ListItem>
                     <ListItem>
-                      <Text>mohsinyaqoob.com</Text>
+                      <Link href={introduction.website} target={"_blank"}>
+                        {introduction.website}
+                      </Link>
                     </ListItem>
                   </List>
                 </VStack>
@@ -144,33 +152,28 @@ const ResumePage = () => {
             <HStack alignItems={"center"} gap={12}>
               <VStack align={"right"} spacing={0} flex={1}>
                 <List textAlign={"right"} spacing={1}>
-                  <ListItem>
-                    <Text fontWeight={"bold"}>October 2021 — Present *</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>July 2019 — August 2021</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>January 2019 — July 2019</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>March 2017 — December 2018</Text>
-                  </ListItem>
+                  {professional.map((work, index) => {
+                    return (
+                      <ListItem key={index}>
+                        <Text fontWeight={index === 0 ? "bold" : ""}>
+                          {work.startDate} - {work.endDate}{" "}
+                          {index === 0 ? "*" : ""}
+                        </Text>
+                      </ListItem>
+                    );
+                  })}
                 </List>
               </VStack>
               <List flex={2} spacing={1}>
-                <ListItem>
-                  <Text>Senior Software Engineer (QSS Technosoft Inc.)</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Full-stack Developer (CodeMites)</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>.NET Developer (Interface Tech.)</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Layout Designer (Captured Illusions)</Text>
-                </ListItem>
+                {professional.map((work, index) => {
+                  return (
+                    <ListItem key={index}>
+                      <Text fontWeight={index === 0 ? "bold" : ""}>
+                        {`${work.role}, ${work.company}`}
+                      </Text>
+                    </ListItem>
+                  );
+                })}
               </List>
             </HStack>
 
@@ -187,29 +190,23 @@ const ResumePage = () => {
             <HStack alignItems={"center"} gap={12}>
               <VStack align={"right"} spacing={0} flex={1}>
                 <List textAlign={"right"} spacing={1}>
-                  <ListItem>
-                    <Text>November 2019 — July 2021</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>July 2015 — August 2018</Text>
-                  </ListItem>
-                  <ListItem>
-                    <Text>August 2015 — Sept 2018</Text>
-                  </ListItem>
+                  {education.map((edu, index) => {
+                    return (
+                      <ListItem key={index}>
+                        <Text>{`${edu.startDate} - ${edu.endDate}`}</Text>
+                      </ListItem>
+                    );
+                  })}
                 </List>
               </VStack>
               <List flex={2} spacing={1}>
-                <ListItem>
-                  <Text>
-                    M.Sc. IT from University of Kashmir, Hazratbal, Srinagar.
-                  </Text>
-                </ListItem>
-                <ListItem>
-                  <Text>GNIIT Cloud & Mobile Software Engineering</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>B.Sc. IT from Sri Pratap College, Srinagar</Text>
-                </ListItem>
+                {education.map((edu, index) => {
+                  return (
+                    <ListItem key={index}>
+                      <Text>{`${edu.degreeOrCertification}, ${edu.provider}, ${edu.providerAddress}`}</Text>
+                    </ListItem>
+                  );
+                })}
               </List>
             </HStack>
             <Heading
@@ -222,40 +219,49 @@ const ResumePage = () => {
             >
               Work Done
             </Heading>
-            <VStack alignItems={"center"} gap={4}>
-              <VStack
-                // h={48}
-                rounded={"md"}
-                boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
-                // border={"1px solid #eee"}
-                p={6}
-                align={"left"}
-              >
-                <Heading fontSize={16}>Automation Command Center</Heading>
-                <Text color={"muted"}>Ortho Clinical Diagnostics, France</Text>
-                <Text pt={2}>
-                  Worked as a full-stack engineer with Ortho Clinical
-                  Diagnostics, France. Implemented best design paterns on the
-                  Autumation Command Center for VITROS.
-                </Text>
-              </VStack>
-
-              <VStack
-                // h={48}
-                rounded={"md"}
-                boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
-                // border={"1px solid #eee"}
-                p={6}
-                align={"left"}
-              >
-                <Heading fontSize={16}>SPARCA AI</Heading>
-                <Text color={"muted"}>Customer Crunch, Sydney</Text>
-                <Text pt={2}>
-                  Worked on a business insights generator app. The said puts the
-                  actors inside a business unit into a questionaire and
-                  generated valuable business insights for he organization.
-                </Text>
-              </VStack>
+            <VStack alignItems={""} gap={12}>
+              {workDone.map((work, index) => {
+                return (
+                  <VStack
+                    rounded={"md"}
+                    boxShadow={"rgba(100, 100, 111, 0.2) 0px 2px 20px 0px"}
+                    gap={2}
+                    p={6}
+                    align={"left"}
+                  >
+                    <HStack justifyContent={"space-between"}>
+                      <VStack align={"left"}>
+                        <Heading
+                          bgGradient="linear(to-l, #ffd500, #FF0080)"
+                          bgClip="text"
+                          size="md"
+                        >
+                          {work.projectTitle}
+                        </Heading>
+                        <Text color={"muted"}>
+                          {`${work.clientName}, ${work.clientAddress}`}
+                        </Text>
+                      </VStack>
+                      <Image src={work.clientLogo} height={8} />
+                    </HStack>
+                    <Text pt={2}>{work.roleDescription}</Text>
+                    <Text fontWeight={"bold"} size="sm">
+                      What I did at {work.projectTitle} :
+                    </Text>
+                    <Box>
+                      <UnorderedList spacing={2}>
+                        {work.workTechnologies.map((tech, index) => {
+                          return (
+                            <ListItem key={index}>
+                              <Text>{tech}</Text>
+                            </ListItem>
+                          );
+                        })}
+                      </UnorderedList>
+                    </Box>
+                  </VStack>
+                );
+              })}
             </VStack>
           </VStack>
         </Box>

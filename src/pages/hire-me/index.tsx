@@ -8,13 +8,7 @@ const HireMe = () => {
       {" "}
       <NextSeo title="Hire me - Mohsin Yaqoob" />
       <VStack mt={[8, 16, 16]} justifyContent={"start"} align={"left"}>
-        <Text>
-          Please write me an email at{" "}
-          <Link color={"accent"} href="mailto:hi@mohsinyaqoob.com">
-            {" "}
-            hi@mohsinyaqoob.com
-          </Link>
-        </Text>
+        
 
         <Text>
           Hir me (Before my mom does)
@@ -54,6 +48,14 @@ const HireMe = () => {
         <Text>
            I'm not just a team player; I'm the cheerleader, coach, and water boy all rolled into one. I'm the kind of colleague who brings donuts on Mondays just to make your week a little brighter.
         </Text>       
+
+        <Text>
+          Hit me up at{" "}
+          <Link color={"accent"} href="mailto:hi@mohsinyaqoob.com">
+            {" "}
+            hi@mohsinyaqoob.com
+          </Link>
+        </Text>
       </VStack>
     </React.Fragment>
   );

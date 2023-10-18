@@ -14,35 +14,35 @@ const HireMe = () => {
           Hir me (Before my mom does)
         </Text>
 
-        <Heading as='h4' size='xl'>
+        <Heading as='h4' size='md'>
           I Never Met a Deadline I Didn't Like:
         </Heading>
         <Text>
            I've been known to chase deadlines like they're the last piece of pizza at a party – with unrelenting determination and a touch of desperation.
         </Text>
 
-        <Heading as='h4' size='xl'>
+        <Heading as='h4' size='md'>
           My Coffee Addiction is Your Gain: 
         </Heading>
         <Text>
           With a constant caffeine buzz, you can expect me to be as alert as a meerkat on espresso, ready to tackle any task with hyper-caffeinated enthusiasm.
         </Text>
 
-        <Heading as='h4' size='xl'>
+        <Heading as='h4' size='md'>
          I Speak Fluent Emoji:
         </Heading>
         <Text>
            I've got emojis for every situation. Need an urgent response? 💡 On vacation but still working? 🏖️ Stuck in a never-ending Zoom call? 😵 I've got you covered.
         </Text>
 
-        <Heading as='h4' size='xl'>
+        <Heading as='h4' size='md'>
          I'm a Multitasking Maestro:
         </Heading>
         <Text>
           I'm a Multitasking Maestro: Like a plate-spinner at a circus, I can juggle multiple tasks without dropping a single one – well, most of the time.
         </Text>
 
-        <Heading as='h4' size='xl'>
+        <Heading as='h4' size='md'>
          A Team Player with an MVP Spirit:
         </Heading>
         <Text>

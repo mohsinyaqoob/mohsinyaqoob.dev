@@ -1,4 +1,4 @@
-import { Link, Text, VStack } from "@chakra-ui/react";
+import { Link, Text, VStack, Heading } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import React from "react";
 

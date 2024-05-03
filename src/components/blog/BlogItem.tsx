@@ -24,6 +24,7 @@ const BlogItem = (props: Props) => {
             rounded={"md"}
             bg={"teal"}
             backgroundImage={thumbnail}
+            backgroundSize={'cover'}
             backgroundPosition={["center", "cover", "center"]}
           ></Box>
           <VStack pt={4} align={"left"}>

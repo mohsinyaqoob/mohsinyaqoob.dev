@@ -5,23 +5,14 @@ import WavingHand from "@/components/WavingHand";
 const Hero = () => {
   return (
     <VStack mt={["10", "20"]} gap={8}>
-      <Box
-        _hover={{ cursor: "pointer" }}
-        bgGradient={"linear(to-l, #00FFF0, #6A0FB2)"}
-        p={1}
-        w={48}
-        h={48}
-        overflow={"hidden"}
-        rounded={"full"}
-      >
-        <Image
-          src={
-            "https://res.cloudinary.com/mohsinyaqoob/image/upload/v1664363386/mohsinyaqoob.com/mohsin-yaqoob-com-blog-picture.png"
-          }
-          height={"full"}
-          width={"full"}
+      <Image
+          src={"/self.png"}
+          className="rounded"
+          borderRadius="full"
+          boxSize="208px"
+          alt="Mohsin Yaqoob"
+          height={'200px'}
         />
-      </Box>
       <HStack alignItems={"center"}>
         <Heading size={"lg"} color={"white"}>
           Hello, I'm{" "}
